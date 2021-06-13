@@ -1,8 +1,8 @@
 import React from "react";
-import mobile1 from "../../assets/mobiles/mobile1.jpeg";
-import mobile2 from "../../assets/mobiles/mobile2.jpeg";
-import mobile4 from "../../assets/mobiles/mobile4.jpeg";
-import mobile5 from "../../assets/mobiles/mobile5.jpeg";
+import one from "../../assets/mobiles/one.jpeg";
+import two from "../../assets/mobiles/two.jpeg";
+import four from "../../assets/mobiles/four.jpeg";
+import five from "../../assets/mobiles/five.jpeg";
 let Mobiles =()=>{
     return(<>
     <section className="bg-warning p-2">
@@ -21,7 +21,7 @@ let Mobiles =()=>{
                     <div className="card">
                         <div className="card-header">
                             <img
-                            src={mobile1}
+                            src={one}
                             alt="Iphone 12 pro"
                             height="100%"
                             width="50%"
@@ -42,15 +42,15 @@ let Mobiles =()=>{
                     <div className="card">
                         <div className="card-header">
                             <img
-                            src={mobile2}
-                            alt="Nokia"
+                            src={two}
+                            alt="Samsung"
                             height="100%"
                             width="50%"
                             />
                         </div>
                         <div className="card-body">
                             <ul className="list-group">
-                                <li className="list-group-control">Nokia</li>
+                                <li className="list-group-control">Samsung</li>
                                 <li className="list-group-control">20000</li>
                                 <li className="list-group-control">
                                     <button className="btn btn-success">Add to cart</button>
@@ -63,15 +63,15 @@ let Mobiles =()=>{
                     <div className="card">
                         <div className="card-header">
                             <img
-                            src={mobile4}
-                            alt="Oppo"
+                            src={four}
+                            alt="Vivo"
                             height="100%"
                             width="50%"
                             />
                         </div>
                         <div className="card-body">
                             <ul className="list-group">
-                                <li className="list-group-control">Oppo</li>
+                                <li className="list-group-control">Vivo</li>
                                 <li className="list-group-control">25000</li>
                                 <li className="list-group-control">
                                     <button className="btn btn-success">Add to cart</button>
@@ -84,15 +84,15 @@ let Mobiles =()=>{
                     <div className="card">
                         <div className="card-header">
                             <img
-                            src={mobile5}
-                            alt="Samsung"
+                            src={five}
+                            alt="Nokia"
                             height="100%"
                             width="50%"
                             />
                         </div>
                         <div className="card-body">
                             <ul className="list-group">
-                                <li className="list-group-control">Samsung</li>
+                                <li className="list-group-control">Nokia</li>
                                 <li className="list-group-control">30000</li>
                                 <li className="list-group-control">
                                     <button className="btn btn-success">Add to cart</button>

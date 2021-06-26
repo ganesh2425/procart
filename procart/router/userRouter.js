@@ -3,6 +3,7 @@ const User = require("../model/User");
 const router = express.Router();
 
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 /*
     Name API : localhost:5000/user/register
     Method: POST
@@ -22,6 +23,7 @@ router.post("/register", async (req, res)=>{
 
         //Save the Form data in the callection
         user = new User ({ name, email, password });
+        console.log(user);
         user = await user.save();
         resp.status(200).json({ result: "Success", user: user})
     }
@@ -31,7 +33,33 @@ router.post("/register", async (req, res)=>{
     }
 });
 
-router.post("/login", (req,res)=>{
-    res.send("<h3>Login Details</h3>")
+router.post("/login", async (req, res)=>{
+    try {
+        //Read Form data
+       /* console.log(req);
+        console.log(req.body); */
+        let {email, password} = req.body;
+        // Verify Register User or Not (using Email)
+        let user = await User.findOne({email: email});
+        if (!user) {
+            return resp.status(400).json({ error: "User Account Not Available"});
+        }
+        // Verify the Password
+        let result = await bcrypt.compare(password, user.password);
+        // console.log(result);
+        if(!result){
+            return resp.status(400).json({status: "Password not Matches"})
+        }
+        let payload = {
+            user: { id: user.id},
+        };
+        jwt.sign(payload, process.env.Secret_KEY, (err, token)=>{
+            if (err) throw err
+        });
+        console.log(process.env.Secret_KEY);
+    } catch (err){
+        if (err) throw err
+        resp.status(500).json({error: "Server Error"})
+    }
 });
 module.exports = router;

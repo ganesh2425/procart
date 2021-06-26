@@ -28,7 +28,7 @@ let Signup =()=>{
                               type="text"
                               className="form-control"
                               name="name"
-                              placeholder="Name"
+                              placeholder="User Name"
                               onChange={inputHandler}
                               />
                           </div>

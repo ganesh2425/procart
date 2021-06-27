@@ -9,8 +9,11 @@ import Login from "./modules/user/components/Login";
 import Signup from "./modules/user/components/Signup";
 import Profile from "./modules/user/components/Profile";
 import Cart from "./modules/order/Cart";
+import {Provider} from "react-redux";
+import store from "./redux/Store";
 let App =()=>{
   return(<>
+  <Provider store={store}>
   <Router>
   <Navbar />
   <Switch>
@@ -25,6 +28,7 @@ let App =()=>{
     
   </Switch>
   </Router>
+  </Provider>
   </>);
 }
 export default App;
